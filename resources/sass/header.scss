@@ -6,6 +6,8 @@ header {
     align-items: center;
     justify-content: center;
     line-height: 1;
+    flex-shrink: 0;
+
     & > * {
         display: flex;
         flex-grow: 1;
