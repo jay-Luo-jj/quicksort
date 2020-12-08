@@ -1,0 +1,23 @@
+{% extends "bases/boxed_page.twig" %}
+{% from "macros.twig" import button, checkbox %}
+{% block boxed_content %}
+
+<div class="box-title">
+    Change Email
+</div>
+<form>
+    <div class="form-group">
+        <div class="form-group-name">New Email</div>
+        <input type="email">
+    </div>
+    <div class="form-group">
+        <div class="form-group-name">Confirm Email</div>
+        <input type="email">
+    </div>
+
+    <div class="form-buttons">
+        <input type="submit" value="Verify Email">
+    </div>
+</form>
+
+{% endblock %}
