@@ -1,0 +1,62 @@
+{% extends "bases/boxed_page.twig" %}
+{% from "macros.twig" import button, checkbox, csrf %}
+{% block boxed_content %}
+
+<div class="box-title">
+    <em>Bee</em>-come a Member!
+</div>
+<form action="/register" method="POST">
+    <div class="form-group">
+        <div class="form-group-name required">Username</div>
+        <input name="username" type="text" value="{{ old('username') }}">
+        <div class="form-group-error">
+            {{ errors.first("username") }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-group-name required">Email</div>
+        <input name="email" type="email" value="{{ old('email') }}">
+        <div class="form-group-error">
+            {{ errors.first("email") }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-group-name required">Password</div>
+        <input name="password" type="password">
+        <div class="form-group-error">
+            {{ errors.first("password") }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-group-name required">Confirm Password</div>
+        <input name="password_confirmation" type="password">
+        <div class="form-group-error">
+            {{ errors.first("password_confirmation") }}
+        </div>
+    </div>
+
+    {{ checkbox(
+        "I have read and agree to the <a>terms and conditions</a> and <a>privacy policy</a>",
+        "tac-consent",
+        true, old('tac-consent')
+    ) }}
+    <div class="form-group-error">
+        {{ errors.first("tac-consent") }}
+    </div>
+    {{ checkbox(
+        "I consent to receiving marketing emails",
+        "email-consent",
+        false, old('email-consent')
+    ) }}
+    <div class="form-required-prompt">Marked fields are required</div>
+
+
+    <div class="form-buttons">
+        <input type="submit" value="Create an Account">
+        {{ button("Log In", "/login", true) }}
+    </div>
+
+    {{ csrf() }}
+</form>
+
+{% endblock %}

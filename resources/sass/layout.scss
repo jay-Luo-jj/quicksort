@@ -1,0 +1,30 @@
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.boxed-content {
+    padding: 24px 54px;
+    align-self: center;
+    justify-self: center;
+    margin: auto;
+    background-color: #fafafa;
+    max-width: 640px;
+    width: 100%;
+}
+
+.box-title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.box-text {
+    text-align: center;
+
+    > p {
+        margin-bottom: 8px;
+    }
+}

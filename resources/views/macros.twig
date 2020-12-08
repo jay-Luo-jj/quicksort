@@ -1,0 +1,19 @@
+{% macro button(text, to="", light=false) %}
+    {% if to %}<a href="{{ to }}">{% endif %}
+        <div class="btn{% if light %} btn-light{% endif %}" tabindex="0">
+            {{ text }}
+        </div>
+    {% if to %}</a>{% endif %}
+{% endmacro %}
+
+{% macro checkbox(label, name, required=false, checked=false) %}
+    <label class="form-checkbox form-small" for="{{ name }}" tabindex="0">
+        <span{% if required %} class="required"{% endif %}>{{ label|raw }}</span>
+        <input type="checkbox" name="{{ name }}" id="{{ name }}" {% if checked %}checked{% endif %}>
+        <span class="checkmark"></span>
+    </label>
+{% endmacro %}
+
+{% macro csrf() %}
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+{% endmacro %}

@@ -1,0 +1,21 @@
+<header>
+    <div class="head-brand">
+        <a href="/" class="brand">Borrow<span>Bees</span></a>
+    </div>
+    <div class="head-search">
+        <form action="/search" method="POST">
+            <input type="text" placeholder="Search for anything">
+        </form>
+    </div>
+    <div class="head-links">
+        <div>
+            {% if auth_check() %}
+               <a href="/profile">{{ auth_user().username }}</a>
+               <a href="/logout">Logout</a>
+            {% else %}
+                <a href="/login">Login</a>
+                <a href="/register">Sign Up</a>
+            {% endif %}
+        </div>
+    </div>
+</header>

@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+    color: #6457a6;
+}
+
+.brand {
+    color: #e3b505;
+    font-weight: 300 !important;
+    > span {
+        font-weight: 600;
+    }
+}
