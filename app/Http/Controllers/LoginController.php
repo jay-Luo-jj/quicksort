@@ -8,14 +8,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 class LoginController extends Controller {
-
-    public function showLogin() {
-        //return json_encode( Auth::check());
-
+    public function index() {
         return View::make("pages/login");
     }
 
-    public function doLogin(Request $request) {
+    public function store(Request $request) {
         $validator = Validator::make($request->all(), [
             "username" => "required",
             "password" => "required",
@@ -41,7 +38,7 @@ class LoginController extends Controller {
         }
     }
 
-    public function doLogout() {
+    public function destroy() {
         Auth::logout();
         return redirect("/");
     }

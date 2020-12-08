@@ -10,12 +10,11 @@ use Illuminate\Support\Facades\View;
 use App\Models\User;
 
 class RegisterController extends Controller {
-
-    public function showRegister() {
+    public function index() {
         return View::make("pages/register");
     }
 
-    public function doRegister(Request $request) {
+    public function store(Request $request) {
         $validator = Validator::make($request->all(), [
             "username" => "required|unique:users,username",
             "email" => "required|email|unique:users,email",
