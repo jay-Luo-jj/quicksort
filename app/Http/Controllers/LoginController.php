@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 class LoginController extends Controller {
-    public function index() {
+    public function show() {
         return View::make("pages/login");
     }
 

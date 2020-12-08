@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\View;
 use App\Models\User;
 
 class RegisterController extends Controller {
-    public function index() {
+    public function show() {
         return View::make("pages/register");
     }
 

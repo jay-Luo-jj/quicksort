@@ -6,6 +6,6 @@ use Illuminate\Support\Facades\View;
 
 class BrowseController extends Controller {
     public function index() {
-        return View::make("pages/index");
+        return View::make("pages/browse");
     }
 }
