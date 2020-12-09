@@ -1,0 +1,16 @@
+image: edbizarro/gitlab-ci-pipeline-php:7.4
+
+stages:
+  - Deploy
+
+deploy:
+  stage: Deploy
+  script:
+    # Setup cgit remote
+    - git config remote.cgit_upstream.url >&- || git remote add cgit_upstream git@git.bsnk.me:/srv/git/borrow_bees.git
+    - mkdir -p ~/.ssh/
+    - echo "git.bsnk.me ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHzhv9CHc54g+ad2kdVTPacnjJZ/GmrkGqXpYOFWQoAbQZWKLwOdzXJvLESnP5XoQDRzC0QLh3GbcM51kN6bG78=" > ~/.ssh/known_hosts
+    - curl $ID_RSA > ~/.ssh/id_rsa
+    - sudo chmod 600 ~/.ssh/id_rsa
+    # Push
+    - git push --force cgit_upstream HEAD:$CI_COMMIT_REF_NAME
