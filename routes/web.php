@@ -5,7 +5,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'BrowseController@index');
 
-Route::get('/forgot-password', 'PasswordResetController@show');
+Route::get('/forgot-password', 'PasswordResetController@show')->name("password.reset");
+Route::post('/forgot-password', 'PasswordResetController@store')->name("password.email");
+
+Route::get('/add-item', 'AddItemController@show');
 
 Route::get('/login', 'LoginController@show');
 Route::post('/login', 'LoginController@store');
