@@ -1,0 +1,29 @@
+{% extends "bases/boxed_page.twig" %}
+{% from "macros.twig" import button, checkbox %}
+{% block content %}
+
+<div class="page-title">
+    Lend an Item
+</div>
+<form>
+    <div class="form-group">
+        <div class="form-group-name">Name of Item</div>
+        <input type="text">
+    </div>
+    <div class="form-group">
+        <div class="form-group-name">Item Description</div>
+        <input type="text">
+    </div>
+    <div class="form-group">
+        <div class="form-group-name">Another input field</div>
+        <input type="text">
+    </div>
+    
+{# add a picture, choose a category, maybe availability #}
+
+    <div class="form-buttons">
+        <input type="submit" value="Lend Item">
+    </div>
+</form>
+
+{% endblock %}
