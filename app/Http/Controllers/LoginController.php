@@ -31,10 +31,9 @@ class LoginController extends Controller {
             "username" => $request->get("username"),
             "password" => $request->get("password")
         ], true)) {
-            //return "pog";
             return redirect("/");
         } else {
-            return "not pog";
+            return back()->with(["login_failed" => true]);
         }
     }
 

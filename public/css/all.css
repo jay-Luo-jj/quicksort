@@ -91,6 +91,12 @@ form input[type=email] {
   font-size: 16px;
 }
 
+.form-error {
+  font-size: 15px;
+  color: #e32a05;
+  margin-top: 8px;
+}
+
 .form-group-error {
   font-size: 13px;
   color: #e32a05;

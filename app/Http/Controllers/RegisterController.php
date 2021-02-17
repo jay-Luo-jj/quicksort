@@ -37,7 +37,13 @@ class RegisterController extends Controller {
                 ->withInput();
         }
 
-        $user = User::create(request(['username', 'email', 'password']));
+        // TODO: Email verification
+        $user = User::create([
+            "username" => $request->get("username"),
+            "password" => $request->get("password"),
+            "email" => $request->get("email"),
+            "marketing_consent" => $request->get("email-consent") == "on"
+        ]);
         Auth::login($user);
         return View::make("pages/post-signup");
     }

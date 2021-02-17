@@ -1,3 +1,5 @@
+$error_colour: #e32a05;
+
 form input[type="text"],
 form input[type="password"],
 form input[type="email"] {
@@ -21,9 +23,15 @@ form input[type="email"] {
     font-size: 16px;
 }
 
+.form-error {
+    font-size: 15px;
+    color: $error_colour;
+    margin-top: 8px;
+}
+
 .form-group-error {
     font-size: 13px;
-    color: #e32a05;
+    color: $error_colour;
 }
 
 form .required::after {
