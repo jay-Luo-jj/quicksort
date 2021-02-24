@@ -4,9 +4,22 @@
 
 Hello world.
 
+<a href="https://google.co.uk" target="_blank">
+    <div class="btn">trest</div>
+</a>
+
+User email: {{email}}
+
 <form class="demoForm" method="POST" action="/test">
-    <input name="test">
-    <input name="test2">
+    <div class="form-group">
+        <div class="form-group-name">Username</div>
+        <input type="text" name="test">
+    </div>
+    <div class="form-group">
+        <div class="form-group-name">New name</div>
+        <input type="text" name="test2">
+    </div>
+
     <input type="submit">
     {{ csrf() }}
 </form>
