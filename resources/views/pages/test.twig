@@ -1,0 +1,14 @@
+{% extends "bases/generic.twig" %}
+{% from "macros.twig" import csrf %}
+{% block content %}
+
+Hello world.
+
+<form class="demoForm" method="POST" action="/test">
+    <input name="test">
+    <input name="test2">
+    <input type="submit">
+    {{ csrf() }}
+</form>
+
+{% endblock %}
