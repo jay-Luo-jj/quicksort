@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'BrowseController@index');
+Route::post('/', 'BrowseController@add');
 
 Route::get('/test', 'HelloWorldController@testPage')->middleware('auth');
 Route::post('/test', 'HelloWorldController@testPagePost');

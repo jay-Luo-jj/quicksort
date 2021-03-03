@@ -6,8 +6,8 @@ footer {
         content: "";
         display: block;
         position: absolute;
-        width: 100%;
         left: 0;
+        right: 0;
         top: 0;
         height: 4px;
         background-color: #2f2f2f7f;
@@ -17,8 +17,8 @@ footer {
         content: "";
         display: block;
         position: absolute;
-        width: 100%;
         left: 0;
+        right: 0;
         bottom: 0;
         height: 2px;
         background-color: #e3b505;
@@ -26,16 +26,16 @@ footer {
 }
 
 .foot-content {
-    width: 100%;
-    max-width: 900px;
-    margin: 24px auto;
+    left:0;
+    right:0;
+    padding: 1% 2%;
     color: #fafafa;
     display: flex;
     flex-direction: row;
 }
 
 .foot-col {
-    min-width: 108px;
+    width:33%;
     margin-right: 32px;
     font-weight: 400;
     & ul {
