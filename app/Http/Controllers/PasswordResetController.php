@@ -16,6 +16,10 @@ class PasswordResetController extends Controller {
         return View::make("pages/forgot-password");
     }
 
+    public function showReset() {
+        return View::make("pages/password-reset");
+    }
+
     public function store(Request $request) {
         $validator = Validator::make($request->all(), [
             "email" => "email|required",
